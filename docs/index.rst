@@ -11,6 +11,9 @@ Welcome to Python Bittrex Websocket Documentation's documentation!
    :caption: Contents:
 
 
+The library is a WebSocket client for the Bittrex exchange. It comes in two versions ``bittrex-websocket-aio`` and ``bittrex-websocket``.
+``bittrex-websocket-aio`` is build on top of :mod:`asyncio`, which is Python's standard asynchronous I/O framework and requires Python>=3.5.
+``bittrex-websocket``, on the other hand, works with both Python2.7 and Python>=3+.
 
 Indices and tables
 ==================
