@@ -28,7 +28,6 @@ version = ''
 # The full version, including alpha/beta/rc tags
 release = '1.0'
 
-
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -44,6 +43,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'sphinx.ext.autodoc',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -73,7 +73,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -86,6 +85,14 @@ html_theme = 'alabaster'
 # documentation.
 #
 # html_theme_options = {}
+
+html_theme_options = {
+    'logo': 'py_btrx.svg',
+    'description': 'Python Bittrex WebSocket is a wrapper for the Bittrex Websocket API. '
+                   'It provides users with a simple and easy to use interface to Bittrex.',
+    'github_button': True,
+    'github_user': 'slazarov',
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -101,13 +108,19 @@ html_static_path = ['_static']
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-
+html_sidebars = {'**':
+                     ['about.html',
+                      'globaltoc.html',
+                      'relations.html',
+                      'sourcelink.html',
+                      'searchbox.html'
+                      ]
+                 }
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'PythonBittrexWebsocketDocumentationdoc'
-
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -133,20 +146,18 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PythonBittrexWebsocketDocumentation.tex', 'Python Bittrex Websocket Documentation Documentation',
+    (master_doc, 'PythonBittrexWebsocketDocumentation.tex', 'Python Bittrex Websocket Documentation',
      'Stanislav A. Lazarov', 'manual'),
 ]
-
 
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pythonbittrexwebsocketdocumentation', 'Python Bittrex Websocket Documentation Documentation',
+    (master_doc, 'pythonbittrexwebsocketdocumentation', 'Python Bittrex Websocket Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output ----------------------------------------------
 
@@ -154,11 +165,10 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PythonBittrexWebsocketDocumentation', 'Python Bittrex Websocket Documentation Documentation',
+    (master_doc, 'PythonBittrexWebsocketDocumentation', 'Python Bittrex Websocket Documentation',
      author, 'PythonBittrexWebsocketDocumentation', 'One line description of project.',
      'Miscellaneous'),
 ]
-
 
 # -- Extension configuration -------------------------------------------------
 
