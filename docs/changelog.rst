@@ -27,7 +27,7 @@ bittrex-websocket-aio
 * If `cfscrape` is installed, the client will automatically use it
 
 0.0.2.0 - 14/04/2018
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 * Implemented reconnection
 * Implemented private account-level methods. Check the :ref:`private subscription methods <priv_sub_methods>`
 
