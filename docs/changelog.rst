@@ -53,6 +53,10 @@ bittrex-websocket
 
 Choose this version if you decide not to use asyncio or you are using Python = 2.7.
 
+1.0.5.0 - 15/05/2018
+^^^^^^^^^^^^^^^^^^^^^
+* Implemented better reconnection logic that captures socket and non-socket errors.
+
 1.0.3.0 - 07/05/2018
 ^^^^^^^^^^^^^^^^^^^^^
 * Transition from beta endpoint to release endpoint
