@@ -17,7 +17,7 @@ bittrex-websocket-aio
 .. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/bittrex-websocket-aio.svg
     :target: https://pypi.python.org/pypi/bittrex-websocket-aio
 
-1.0.3.0 - 07/05/2018
+0.0.0.2.8 - 07/05/2018
 ^^^^^^^^^^^^^^^^^^^^^
 * Transition from beta endpoint to release endpoint
 
