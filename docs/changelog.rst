@@ -53,6 +53,10 @@ bittrex-websocket
 
 Choose this version if you decide not to use asyncio or you are using Python = 2.7.
 
+1.0.6.2 - 01/07/2018
+^^^^^^^^^^^^^^^^^^^^^
+* Reimplemented order book syncing.
+
 1.0.5.0 - 15/05/2018
 ^^^^^^^^^^^^^^^^^^^^^
 * Implemented better reconnection logic that captures socket and non-socket errors.

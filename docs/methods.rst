@@ -20,6 +20,36 @@ Custom URLs can be passed to the client upon instantiating.
     ws = MySocket(url=None)
     # rest of your code
 
+Order Book Class Methods
+------------------------
+Order book sync is currently supported for the non-async version of the client (**version >=1.0.6.2**).
+
+.. code:: python
+
+    from bittrex_websocket import OrderBook
+
+    def subscribe_to_orderbook(tickers):
+    """
+    Allows the caller to subscribe to order book sync for a ticker.
+
+    :param tickers: A list of tickers you are interested in.
+    :type tickers: []
+    """
+
+    def get_order_book(ticker):
+    """
+    Returns the order book for a specific ticker
+
+    :param tickers: Specific ticker you are interested in.
+    :type tickers: str
+    """
+
+    def on_ping(self,msg):
+    """
+    Message channel which is pinged upon sync update. The message contains the ticker name.
+    You have to to create an instance of the class and overwrite the method.
+    """
+
 Subscription Methods
 --------------------
 
@@ -45,7 +75,6 @@ Public subscription methods stream to ``async def on_public(self, msg)``
 
         :param tickers: A list of tickers you are interested in.
         :type tickers: []
-
         https://github.com/Bittrex/bittrex.github.io/#subscribetoexchangedeltas
 
         JSON Payload:
@@ -166,40 +195,40 @@ Public subscription methods stream to ``async def on_public(self, msg)``
         Allows the caller to retrieve the full order book for a specific market.
 
         :param tickers: A list of tickers you are interested in.
-        :type tickers: []
+            :type tickers: []
 
-        JSON payload:
-            {
-                MarketName : string,
-                Nonce      : int,
-                Buys:
-                [
-                    {
-                        Quantity : decimal,
-                        Rate     : decimal
-                    }
-                ],
-                Sells:
-                [
-                    {
-                        Quantity : decimal,
-                        Rate     : decimal
-                    }
-                ],
-                Fills:
-                [
-                    {
-                        Id        : int,
-                        TimeStamp : date,
-                        Quantity  : decimal,
-                        Price     : decimal,
-                        Total     : decimal,
-                        FillType  : string,
-                        OrderType : string
-                    }
-                ]
-            }
-        """
+            JSON payload:
+                {
+                    MarketName : string,
+                    Nonce      : int,
+                    Buys:
+                    [
+                        {
+                            Quantity : decimal,
+                            Rate     : decimal
+                        }
+                    ],
+                    Sells:
+                    [
+                        {
+                            Quantity : decimal,
+                            Rate     : decimal
+                        }
+                    ],
+                    Fills:
+                    [
+                        {
+                            Id        : int,
+                            TimeStamp : date,
+                            Quantity  : decimal,
+                            Price     : decimal,
+                            Total     : decimal,
+                            FillType  : string,
+                            OrderType : string
+                        }
+                    ]
+                }
+            """
 
 Private Subscription Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -215,11 +244,11 @@ Private subscription methods stream to ``async def on_private(self, msg)``
         Verifies a user’s identity to the server and begins receiving account-level notifications
 
         :param api_key: Your api_key with the relevant permissions.
-        :type api_key: str
-        :param api_secret: Your api_secret with the relevant permissions.
-        :type api_secret: str
+            :type api_key: str
+            :param api_secret: Your api_secret with the relevant permissions.
+            :type api_secret: str
 
-        https://github.com/Bittrex/bittrex.github.io#authenticate
+            https://github.com/Bittrex/bittrex.github.io#authenticate
         """
 
 Message channels
@@ -259,12 +288,12 @@ Other Methods
         Enables logging.
 
         :param file_name: The name of the log file, located in the same directory as the executing script.
-        :type file_name: str
-        """
+            :type file_name: str
+            """
 
-    def disable_log():
-        """
-        Disables logging.
-        """
+        def disable_log():
+            """
+            Disables logging.
+            """
 
 
