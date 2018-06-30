@@ -24,6 +24,8 @@ Order Book Class Methods
 ------------------------
 Order book sync is currently supported for the non-async version of the client (**version >=1.0.6.2**).
 
+Please check the examples pages for additional information on how to use the class.
+
 .. code:: python
 
     from bittrex_websocket import OrderBook
